@@ -1,63 +1,33 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#define SIZE 10
-
-int main()
+#include<ctype.h>
+void checking_equal(char a[], char b[])
 {
+    int i;
+    for (i = 0; a[i] != 0 && b[i] != 0; i++)
+        if (tolower(a[i]) != tolower(b[i]))
+            break;
 
-    int x[SIZE];
-    int i, even = 0, odd = 0;
+    if (a[i] == 0 && b[i] == 0)
+    {
 
-    srand(time(0));
-
-    printf("List: ");
-    for (i = 0; i < SIZE; i++)
-    {
-        x[i] = rand() % 95;
-        printf("%d ", x[i]);
-    }
-    for (i = 0; i < SIZE; i++)
-    {
-        {
-            if (x[i] % 2 == 0)
-            {
-                even++;
-            }
-            else
-            {
-                odd++;
-            }
-        }
-    }
-    if (even > odd)
-    {
-        for (i = 0; i < SIZE; i++)
-        {
-            if (x[i] % 2 != 0)
-            {
-                x[i] = x[i] + 1;
-            }
-        }
+        printf("The strings are equal.\n");
     }
     else
     {
-        for (i = 0; i < SIZE; i++)
-        {
-            if (x[i] % 2 == 0)
-            {
-                x[i] = x[i] - 1;
-            }
-        }
+        printf("The strings are not equal.\n");
     }
-    printf("\n\n\n");
-    printf("List after processing: ");
+}
 
-    for (i = 0; i < SIZE; i++)
-    {
-        printf("%d ", x[i]);
-    }
-    printf("\n");
+int main()
+{
+    char a[2000];
+    printf("Enter First string: ");
+    fgets(a, 1999, stdin);
 
+    char b[2000];
+    printf("Enter Second string: ");
+    fgets(b, 1999, stdin);
+
+    checking_equal(a, b);
     return 0;
 }

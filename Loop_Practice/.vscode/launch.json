@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/saraj/Desktop/Practice09",
-      "program": "/home/saraj/Desktop/Practice09/build/Debug/outDebug",
+      "cwd": "/home/saraj/Desktop/Practice",
+      "program": "/home/saraj/Desktop/Practice/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
